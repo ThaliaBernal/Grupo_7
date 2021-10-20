@@ -5,9 +5,7 @@
  */
 package com.retos.reto3.repositorio;
 
-import com.retos.reto3.interfaz.InterfaceBike;
 import com.retos.reto3.interfaz.InterfaceCategoria;
-import com.retos.reto3.modelo.Bike;
 import com.retos.reto3.modelo.Categoria;
 import java.util.List;
 import java.util.Optional;

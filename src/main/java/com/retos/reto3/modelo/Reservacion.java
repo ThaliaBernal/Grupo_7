@@ -35,14 +35,22 @@ public class Reservacion implements Serializable{
     @ManyToOne
     @JoinColumn(name = "id")
     @JsonIgnoreProperties("reservations")
-    private Bike bike;
+    private Farm farm;
     
     @ManyToOne
     @JoinColumn(name = "idClient")
     @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
     
-    private String score; //de acuerdo al grupo 
+    @ManyToOne
+    @JoinColumn(name = "idScore")
+    @JsonIgnoreProperties("reservations")
+    private Score score;
+    
+    
+    
+    
+   
 
     public Integer getIdReservation() {
         return idReservation;
@@ -68,20 +76,13 @@ public class Reservacion implements Serializable{
         this.devolutionDate = devolutionDate;
     }
 
-    public String getStatus() {
-        return status;
+   
+    public Farm getFarm() {
+        return farm;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Bike getBike() {
-        return bike;
-    }
-
-    public void setBike(Bike bike) {
-        this.bike = bike;
+    public void setFarm(Farm farm) {
+        this.farm = farm;
     }
 
     public Client getClient() {
@@ -92,13 +93,24 @@ public class Reservacion implements Serializable{
         this.client = client;
     }
 
-    public String getScore() {
+    
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Score getScore() {
         return score;
     }
 
-    public void setScore(String score) {
+    public void setScore(Score score) {
         this.score = score;
     }
+    
+    
     
     
     

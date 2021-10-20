@@ -7,6 +7,7 @@ package com.retos.reto3.modelo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,17 +27,24 @@ public class Mensaje implements Serializable{
       @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMessage;
+       @Column(length=250)
     private String messageText;
     
     @ManyToOne
     @JoinColumn(name = "id")
     @JsonIgnoreProperties({"messages","client","reservations"})
-    private Bike bike;
+    private Farm farm;
       
     @ManyToOne
     @JoinColumn(name = "clientId")
     @JsonIgnoreProperties({"messages","reservations","client"})
     private Client client;
+    
+    @ManyToOne
+    @JoinColumn(name = "idScore")
+    @JsonIgnoreProperties({"messages","client","reservations"})
+    private Score score;
+    
 
     public Integer getIdMessage() {
         return idMessage;
@@ -54,12 +62,12 @@ public class Mensaje implements Serializable{
         this.messageText = messageText;
     }
 
-    public Bike getBike() {
-        return bike;
+    public Farm getFarm() {
+        return farm;
     }
 
-    public void setBike(Bike bike) {
-        this.bike = bike;
+    public void setFarm(Farm farm) {
+        this.farm = farm;
     }
 
     public Client getClient() {

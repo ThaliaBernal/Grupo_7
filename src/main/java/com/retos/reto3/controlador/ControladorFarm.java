@@ -5,8 +5,9 @@
  */
 package com.retos.reto3.controlador;
 
-import com.retos.reto3.modelo.Bike;
-import com.retos.reto3.servicios.ServicioBike;
+
+import com.retos.reto3.modelo.Farm;
+import com.retos.reto3.servicios.ServicioFarm;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,45 +30,39 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Usuario
  */
 @RestController
-@RequestMapping("/api/Bike")
+@RequestMapping("/api/Farm")
 @CrossOrigin(origins = "*",methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class ControladorBike {
+public class ControladorFarm {
     
-    @Autowired
-    private ServicioBike service;
+     @Autowired
+    private ServicioFarm service;
     
     @GetMapping("/all")
-    public List<Bike> getBikes(){
+    public List<Farm> getBikes(){
        return service.getAll();
     }
     
     @GetMapping("/{id}")
-    public Optional<Bike> getBike(@PathVariable("id") int bikeId ){
-       return service.getBike(bikeId);
+    public Optional<Farm> getBike(@PathVariable("id") int farmId ){
+       return service.getFarm(farmId);
     }
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public  Bike save(@RequestBody Bike bike ){
-       return service.save(bike);
+    public  Farm save(@RequestBody Farm farm ){
+       return service.save(farm);
     }
     
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public  Bike update(@RequestBody Bike bike ){
-       return service.update(bike);
+    public  Farm update(@RequestBody Farm farm ){
+       return service.update(farm);
     }
     
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public  boolean delete(@PathVariable("id") int bikeId ){        
-       return service.deleteBike(bikeId);
+    public  boolean delete(@PathVariable("id") int farmId ){        
+       return service.deleteBike(farmId);
     }
-    
-    
- 
-    
-    
-    
     
 }

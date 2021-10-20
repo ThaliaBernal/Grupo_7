@@ -5,8 +5,8 @@
  */
 package com.retos.reto3.repositorio;
 
-import com.retos.reto3.interfaz.InterfaceBike;
-import com.retos.reto3.modelo.Bike;
+import com.retos.reto3.interfaz.InterfaceAdmin;
+import com.retos.reto3.modelo.Admin;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,28 +17,26 @@ import org.springframework.stereotype.Repository;
  * @author Usuario
  */
 @Repository
-public class RepositorioBike {
+public class RepositorioAdmin {
+    
     
     @Autowired
-    private InterfaceBike crud;
+    private InterfaceAdmin crud;
     
-    public List<Bike> getAll(){
-        return (List<Bike>) crud.findAll();
+    public List<Admin> getAll(){
+        return (List<Admin>) crud.findAll();
     }
     
-    public Optional<Bike> getBike(int id){
+    public Optional<Admin> getAdmin(int id){
         return crud.findById(id);
     }
     
-    public Bike save(Bike bike){
-        return crud.save(bike);
+    public Admin save(Admin admin){
+        return crud.save(admin);
     }
     
-    public void delete(Bike bike){
-         crud.delete(bike);
+    public void delete(Admin admin){
+         crud.delete(admin);
     }
-    
-    
-    
     
 }

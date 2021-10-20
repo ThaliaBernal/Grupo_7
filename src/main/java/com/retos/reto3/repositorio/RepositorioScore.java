@@ -5,8 +5,8 @@
  */
 package com.retos.reto3.repositorio;
 
-import com.retos.reto3.interfaz.InterfaceMensaje;
-import com.retos.reto3.modelo.Mensaje;
+import com.retos.reto3.interfaz.InterfaceScore;
+import com.retos.reto3.modelo.Score;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,26 +17,26 @@ import org.springframework.stereotype.Repository;
  * @author Usuario
  */
 @Repository
-public class RepositorioMensaje {
+public class RepositorioScore {
     
-     @Autowired
-    private InterfaceMensaje crud;
     
-    public List<Mensaje> getAll(){
-        return (List<Mensaje>) crud.findAll();
+    @Autowired
+    private InterfaceScore crud;
+    
+    public List<Score> getAll(){
+        return (List<Score>) crud.findAll();
     }
     
-    public Optional<Mensaje> getMensaje(int id){
+    public Optional<Score> getScore(int id){
         return crud.findById(id);
     }
     
-    public Mensaje save(Mensaje mensaje){
-        return crud.save(mensaje);
+    public Score save(Score score){
+        return crud.save(score);
     }
     
-    public void delete(Mensaje mensaje){
-         crud.delete(mensaje);
+    public void delete(Score score){
+         crud.delete(score);
     }
-    
     
 }

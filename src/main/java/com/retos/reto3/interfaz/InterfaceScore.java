@@ -5,13 +5,13 @@
  */
 package com.retos.reto3.interfaz;
 
-import com.retos.reto3.modelo.Bike;
+import com.retos.reto3.modelo.Score;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author Usuario
  */
-public interface InterfaceBike extends CrudRepository<Bike, Integer>{
+public interface InterfaceScore extends CrudRepository<Score, Integer> {
     
 }

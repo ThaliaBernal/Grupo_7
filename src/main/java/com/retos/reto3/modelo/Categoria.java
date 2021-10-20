@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,12 +27,14 @@ public class Categoria implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+     @Column(length=45)
     private String name;
+      @Column(length=250)
     private String Description;
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category" )
     @JsonIgnoreProperties("category")
-    private List<Bike> bikes;
+    private List<Farm> farm;
 
     public Integer getId() {
         return id;
@@ -57,12 +60,12 @@ public class Categoria implements Serializable{
         this.Description = Description;
     }
 
-    public List<Bike> getBikes() {
-        return bikes;
+    public List<Farm> getFarm() {
+        return farm;
     }
 
-    public void setBikes(List<Bike> bikes) {
-        this.bikes = bikes;
+    public void setBikes(List<Farm> farm) {
+        this.farm = farm;
     }
     
     

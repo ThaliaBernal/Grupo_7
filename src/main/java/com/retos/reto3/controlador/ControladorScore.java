@@ -5,8 +5,8 @@
  */
 package com.retos.reto3.controlador;
 
-import com.retos.reto3.modelo.Categoria;
-import com.retos.reto3.servicios.ServicioCategoria;
+import com.retos.reto3.modelo.Score;
+import com.retos.reto3.servicios.ServicioScore;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,43 +22,46 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
+/**
+ *
+ * @author Usuario
+ */
 @RestController
-@RequestMapping("/api/Category")
+@RequestMapping("/api/Score")
 @CrossOrigin(origins = "*",methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class ControladorCategoria {
+public class ControladorScore {
     
+     
     @Autowired
-    private ServicioCategoria service;
+    private ServicioScore service;
     
     @GetMapping("/all")
-    public List<Categoria> getCategoria(){
+    public List<Score> getScores(){
        return service.getAll();
     }
     
     @GetMapping("/{id}")
-    public Optional<Categoria> getCategoria(@PathVariable("id") int bikeId ){
-       return service.getCategoria(bikeId);
+    public Optional<Score> getScore(@PathVariable("id") int scoreId ){
+       return service.getScore(scoreId);
     }
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public  Categoria save(@RequestBody Categoria categoria ){
-       return service.save(categoria);
+    public  Score save(@RequestBody Score score ){
+       return service.save(score);
     }
     
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public  Categoria update(@RequestBody Categoria categoria ){
-       return service.update(categoria);
+    public  Score update(@RequestBody Score score ){
+       return service.update(score);
     }
     
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public  boolean delete(@PathVariable("id") int bikeId ){        
-       return service.deleteCategoria(bikeId);
+    public  boolean delete(@PathVariable("id") int scoreId ){        
+       return service.deleteScore(scoreId);
     }
-    
     
     
 }

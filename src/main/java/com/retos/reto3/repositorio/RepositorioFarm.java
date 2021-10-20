@@ -5,8 +5,8 @@
  */
 package com.retos.reto3.repositorio;
 
-import com.retos.reto3.interfaz.InterfaceMensaje;
-import com.retos.reto3.modelo.Mensaje;
+import com.retos.reto3.interfaz.InterfaceFarm;
+import com.retos.reto3.modelo.Farm;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,26 +17,27 @@ import org.springframework.stereotype.Repository;
  * @author Usuario
  */
 @Repository
-public class RepositorioMensaje {
+public class RepositorioFarm {
     
      @Autowired
-    private InterfaceMensaje crud;
+    private InterfaceFarm crud;
     
-    public List<Mensaje> getAll(){
-        return (List<Mensaje>) crud.findAll();
+    public List<Farm> getAll(){
+        return (List<Farm>) crud.findAll();
     }
     
-    public Optional<Mensaje> getMensaje(int id){
+    public Optional<Farm> getFarm(int id){
         return crud.findById(id);
     }
     
-    public Mensaje save(Mensaje mensaje){
-        return crud.save(mensaje);
+    public Farm save(Farm farm){
+        return crud.save(farm);
     }
     
-    public void delete(Mensaje mensaje){
-         crud.delete(mensaje);
+    public void delete(Farm farm){
+         crud.delete(farm);
     }
+    
     
     
 }
