@@ -67,7 +67,7 @@ public class ServicioCategoria {
     }
     
     public boolean deleteCategoria(int categoriaId){
-        Boolean aBoolean = getCategoria(categoriaId).map(categoria ->{
+        Boolean aBoolean = getCategoria(categoriaId).map(categoria -> {
         metodosCrud.delete(categoria);
         return true;
         }).orElse(false);

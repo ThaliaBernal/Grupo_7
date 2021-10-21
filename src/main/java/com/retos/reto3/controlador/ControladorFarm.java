@@ -60,7 +60,7 @@ public class ControladorFarm {
     }
     
     @DeleteMapping("/{id}")
-   // @ResponseStatus(HttpStatus.CREATED)
+   @ResponseStatus(HttpStatus.NO_CONTENT)
     public  boolean delete(@PathVariable("id") int farmId ){        
        return service.deleteBike(farmId);
     }
