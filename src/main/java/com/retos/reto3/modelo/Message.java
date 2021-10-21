@@ -29,16 +29,18 @@ public class Message implements Serializable{
     private Integer idMessage;
        @Column(length=250)
     private String messageText;
+       
+    @ManyToOne
+    @JoinColumn(name = "id")
+    @JsonIgnoreProperties({"messages","client","reservations"})
+    private Farm farm;
     
     @ManyToOne
     @JoinColumn(name = "clientId")
     @JsonIgnoreProperties({"messages","reservations","client"})
     private Client client;
     
-    @ManyToOne
-    @JoinColumn(name = "id")
-    @JsonIgnoreProperties({"messages","client","reservations"})
-    private Farm farm;
+    
       
     
     
