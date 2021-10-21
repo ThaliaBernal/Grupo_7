@@ -5,13 +5,13 @@
  */
 package com.retos.reto3.interfaz;
 
-import com.retos.reto3.modelo.Mensaje;
+import com.retos.reto3.modelo.Message;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author Usuario
  */
-public interface InterfaceMensaje extends CrudRepository<Mensaje, Integer> {
+public interface InterfaceMensaje extends CrudRepository<Message, Integer> {
     
 }

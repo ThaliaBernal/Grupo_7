@@ -5,7 +5,7 @@
  */
 package com.retos.reto3.controlador;
 
-import com.retos.reto3.modelo.Categoria;
+import com.retos.reto3.modelo.Category;
 import com.retos.reto3.servicios.ServicioCategoria;
 import java.util.List;
 import java.util.Optional;
@@ -32,24 +32,24 @@ public class ControladorCategoria {
     private ServicioCategoria service;
     
     @GetMapping("/all")
-    public List<Categoria> getCategoria(){
+    public List<Category> getCategoria(){
        return service.getAll();
     }
     
     @GetMapping("/{id}")
-    public Optional<Categoria> getCategoria(@PathVariable("id") int bikeId ){
+    public Optional<Category> getCategoria(@PathVariable("id") int bikeId ){
        return service.getCategoria(bikeId);
     }
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public  Categoria save(@RequestBody Categoria categoria ){
+    public  Category save(@RequestBody Category categoria ){
        return service.save(categoria);
     }
     
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public  Categoria update(@RequestBody Categoria categoria ){
+    public  Category update(@RequestBody Category categoria ){
        return service.update(categoria);
     }
     

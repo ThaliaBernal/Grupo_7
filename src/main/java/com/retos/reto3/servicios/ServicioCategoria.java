@@ -5,7 +5,7 @@
  */
 package com.retos.reto3.servicios;
 
-import com.retos.reto3.modelo.Categoria;
+import com.retos.reto3.modelo.Category;
 import com.retos.reto3.repositorio.RepositorioCategoria;
 import java.util.List;
 import java.util.Optional;
@@ -21,19 +21,19 @@ public class ServicioCategoria {
     @Autowired
     private RepositorioCategoria metodosCrud;
     
-     public List<Categoria> getAll(){
-        return (List<Categoria>) metodosCrud.getAll();
+     public List<Category> getAll(){
+        return (List<Category>) metodosCrud.getAll();
     }
     
-    public Optional<Categoria> getCategoria(int categoriaId){
+    public Optional<Category> getCategoria(int categoriaId){
         return metodosCrud.getCategoria(categoriaId);
     }
     
-    public Categoria save(Categoria categoria){
+    public Category save(Category categoria){
         if(categoria.getId() ==null){
             return metodosCrud.save(categoria);
         }else{
-            Optional<Categoria> e = metodosCrud.getCategoria(categoria.getId());
+            Optional<Category> e = metodosCrud.getCategoria(categoria.getId());
             if(e == null){
                 return metodosCrud.save(categoria);
             }else{
@@ -42,9 +42,9 @@ public class ServicioCategoria {
         }
     }
     
-    public Categoria update(Categoria categoria){
+    public Category update(Category categoria){
         if(categoria.getId() !=null){
-           Optional<Categoria> e = metodosCrud.getCategoria(categoria.getId());
+           Optional<Category> e = metodosCrud.getCategoria(categoria.getId());
            
            if(e != null){
                if(categoria.getName() != null){

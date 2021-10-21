@@ -32,25 +32,27 @@ public class Farm implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(length=45)
-    private String address;
-    private Integer extension; 
-    @Column(length=45)
     private String name;
+    @Column(length=45)
+    private String address;
+    private Integer extension;     
      @Column(length=250)
     private String description;
     
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("farm")
-    private Categoria category;
+    @JsonIgnoreProperties("farms")
+    private Category category;
+    
+    @OneToMany( cascade = {CascadeType.PERSIST}, mappedBy = "farm")
+    @JsonIgnoreProperties({"farm","client"})
+    private List<Message> messages;
     
     @OneToMany( cascade = {CascadeType.PERSIST}, mappedBy = "farm")
     @JsonIgnoreProperties({"farm","client"})
     private List<Reservacion> reservations;
     
-    @OneToMany( cascade = {CascadeType.PERSIST}, mappedBy = "farm")
-    @JsonIgnoreProperties({"farm","client"})
-    private List<Mensaje> messages;
+    
 
     public Integer getId() {
         return id;
@@ -92,11 +94,11 @@ public class Farm implements Serializable{
         this.description = description;
     }
 
-    public Categoria getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(Categoria category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
@@ -108,11 +110,11 @@ public class Farm implements Serializable{
         this.reservations = reservations;
     }
 
-    public List<Mensaje> getMessages() {
+    public List<Message> getMessages() {
         return messages;
     }
 
-    public void setMessages(List<Mensaje> messages) {
+    public void setMessages(List<Message> messages) {
         this.messages = messages;
     }
     

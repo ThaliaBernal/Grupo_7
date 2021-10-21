@@ -42,11 +42,11 @@ public class Reservacion implements Serializable{
     @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
     
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "idScore")
     @JsonIgnoreProperties("reservations")
-    private Score score;
-    
+    private Score score;*/
+    private String score;
     
     
     
@@ -102,14 +102,15 @@ public class Reservacion implements Serializable{
         this.status = status;
     }
 
-    public Score getScore() {
+    public String getScore() {
         return score;
     }
 
-    public void setScore(Score score) {
+    public void setScore(String score) {
         this.score = score;
     }
-    
+
+  
     
     
     

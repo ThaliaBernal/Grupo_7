@@ -6,7 +6,7 @@
 package com.retos.reto3.repositorio;
 
 import com.retos.reto3.interfaz.InterfaceMensaje;
-import com.retos.reto3.modelo.Mensaje;
+import com.retos.reto3.modelo.Message;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +22,19 @@ public class RepositorioMensaje {
      @Autowired
     private InterfaceMensaje crud;
     
-    public List<Mensaje> getAll(){
-        return (List<Mensaje>) crud.findAll();
+    public List<Message> getAll(){
+        return (List<Message>) crud.findAll();
     }
     
-    public Optional<Mensaje> getMensaje(int id){
+    public Optional<Message> getMensaje(int id){
         return crud.findById(id);
     }
     
-    public Mensaje save(Mensaje mensaje){
+    public Message save(Message mensaje){
         return crud.save(mensaje);
     }
     
-    public void delete(Mensaje mensaje){
+    public void delete(Message mensaje){
          crud.delete(mensaje);
     }
     

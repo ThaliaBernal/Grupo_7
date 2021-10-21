@@ -5,13 +5,13 @@
  */
 package com.retos.reto3.interfaz;
 
-import com.retos.reto3.modelo.Categoria;
+import com.retos.reto3.modelo.Category;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author Usuario
  */
-public interface InterfaceCategoria extends CrudRepository<Categoria, Integer> {
+public interface InterfaceCategoria extends CrudRepository<Category, Integer> {
     
 }

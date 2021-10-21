@@ -5,8 +5,8 @@
  */
 package com.retos.reto3.servicios;
 
-import com.retos.reto3.modelo.Categoria;
-import com.retos.reto3.modelo.Mensaje;
+import com.retos.reto3.modelo.Category;
+import com.retos.reto3.modelo.Message;
 import com.retos.reto3.repositorio.RepositorioCategoria;
 import com.retos.reto3.repositorio.RepositorioMensaje;
 import java.util.List;
@@ -24,19 +24,19 @@ public class ServicioMensaje {
        @Autowired
     private RepositorioMensaje metodosCrud;
     
-     public List<Mensaje> getAll(){
-        return (List<Mensaje>) metodosCrud.getAll();
+     public List<Message> getAll(){
+        return (List<Message>) metodosCrud.getAll();
     }
     
-    public Optional<Mensaje> getMensaje(int mensajeId){
+    public Optional<Message> getMensaje(int mensajeId){
         return metodosCrud.getMensaje(mensajeId);
     }
     
-    public Mensaje save(Mensaje mensaje){
+    public Message save(Message mensaje){
         if(mensaje.getIdMessage() ==null){
             return metodosCrud.save(mensaje);
         }else{
-            Optional<Mensaje> e = metodosCrud.getMensaje(mensaje.getIdMessage());
+            Optional<Message> e = metodosCrud.getMensaje(mensaje.getIdMessage());
             if(e == null){
                 return metodosCrud.save(mensaje);
             }else{
@@ -45,9 +45,9 @@ public class ServicioMensaje {
         }
     }
     
-    public Mensaje update(Mensaje mensaje){
+    public Message update(Message mensaje){
         if(mensaje.getIdMessage() !=null){
-           Optional<Mensaje> e = metodosCrud.getMensaje(mensaje.getIdMessage());
+           Optional<Message> e = metodosCrud.getMensaje(mensaje.getIdMessage());
            
            if(e != null){
                if(mensaje.getMessageText()!= null){

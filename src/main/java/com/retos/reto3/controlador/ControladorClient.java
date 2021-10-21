@@ -5,7 +5,7 @@
  */
 package com.retos.reto3.controlador;
 
-import com.retos.reto3.modelo.Categoria;
+import com.retos.reto3.modelo.Category;
 import com.retos.reto3.modelo.Client;
 import com.retos.reto3.servicios.ServicioCategoria;
 import com.retos.reto3.servicios.ServicioClient;

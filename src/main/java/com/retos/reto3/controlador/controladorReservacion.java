@@ -5,7 +5,7 @@
  */
 package com.retos.reto3.controlador;
 
-import com.retos.reto3.modelo.Mensaje;
+import com.retos.reto3.modelo.Message;
 import com.retos.reto3.modelo.Reservacion;
 import com.retos.reto3.servicios.ServicioMensaje;
 import com.retos.reto3.servicios.ServicioReservacion;
@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/api/Reservacion")
+@RequestMapping("/api/Reservation")
 @CrossOrigin(origins = "*",methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class controladorReservacion {
     @Autowired

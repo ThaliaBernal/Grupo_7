@@ -6,7 +6,7 @@
 package com.retos.reto3.controlador;
 
 import com.retos.reto3.modelo.Client;
-import com.retos.reto3.modelo.Mensaje;
+import com.retos.reto3.modelo.Message;
 import com.retos.reto3.servicios.ServicioClient;
 import com.retos.reto3.servicios.ServicioMensaje;
 import java.util.List;
@@ -30,31 +30,31 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Usuario
  */
 @RestController
-@RequestMapping("/api/Mensaje")
+@RequestMapping("/api/Message")
 @CrossOrigin(origins = "*",methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class ControladorMensaje {
     @Autowired
     private ServicioMensaje service;
     
     @GetMapping("/all")
-    public List<Mensaje> getMensaje(){
+    public List<Message> getMensaje(){
        return service.getAll();
     }
     
     @GetMapping("/{id}")
-    public Optional<Mensaje> getClient(@PathVariable("id") int mensajeId ){
+    public Optional<Message> getClient(@PathVariable("id") int mensajeId ){
        return service.getMensaje(mensajeId);
     }
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public  Mensaje save(@RequestBody Mensaje mensaje ){
+    public  Message save(@RequestBody Message mensaje ){
        return service.save(mensaje);
     }
     
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public  Mensaje update(@RequestBody Mensaje mensaje ){
+    public  Message update(@RequestBody Message mensaje ){
        return service.update(mensaje);
     }
     

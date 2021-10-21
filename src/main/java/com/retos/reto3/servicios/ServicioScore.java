@@ -51,12 +51,12 @@ public class ServicioScore {
                if(score.getScore() != null){
                    e.get().setScore(score.getScore());
                }
-               if(score.getMessages() != null){
+           /*    if(score.getMessages() != null){
                    e.get().setMessages(score.getMessages());
                }
                if(score.getReservations()!= null){
                    e.get().setReservations(score.getReservations());
-               }
+               }*/
                metodosCrud.save(e.get());
                return e.get();
            }else{

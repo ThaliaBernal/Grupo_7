@@ -7,7 +7,7 @@ package com.retos.reto3.repositorio;
 
 import com.retos.reto3.interfaz.InterfaceCategoria;
 import com.retos.reto3.interfaz.InterfaceClient;
-import com.retos.reto3.modelo.Categoria;
+import com.retos.reto3.modelo.Category;
 import com.retos.reto3.modelo.Client;
 import java.util.List;
 import java.util.Optional;

@@ -6,7 +6,7 @@
 package com.retos.reto3.repositorio;
 
 import com.retos.reto3.interfaz.InterfaceCategoria;
-import com.retos.reto3.modelo.Categoria;
+import com.retos.reto3.modelo.Category;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +22,19 @@ public class RepositorioCategoria {
      @Autowired
     private InterfaceCategoria crud;
     
-    public List<Categoria> getAll(){
-        return (List<Categoria>) crud.findAll();
+    public List<Category> getAll(){
+        return (List<Category>) crud.findAll();
     }
     
-    public Optional<Categoria> getCategoria(int id){
+    public Optional<Category> getCategoria(int id){
         return crud.findById(id);
     }
     
-    public Categoria save(Categoria categoria){
+    public Category save(Category categoria){
         return crud.save(categoria);
     }
     
-    public void delete(Categoria categoria){
+    public void delete(Category categoria){
          crud.delete(categoria);
     }
     

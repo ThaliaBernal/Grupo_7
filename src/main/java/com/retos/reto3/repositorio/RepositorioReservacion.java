@@ -7,7 +7,7 @@ package com.retos.reto3.repositorio;
 
 import com.retos.reto3.interfaz.InterfaceMensaje;
 import com.retos.reto3.interfaz.InterfaceReservation;
-import com.retos.reto3.modelo.Mensaje;
+import com.retos.reto3.modelo.Message;
 import com.retos.reto3.modelo.Reservacion;
 import java.util.List;
 import java.util.Optional;
