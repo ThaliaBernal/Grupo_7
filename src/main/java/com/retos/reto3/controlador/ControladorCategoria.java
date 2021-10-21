@@ -5,6 +5,7 @@
  */
 package com.retos.reto3.controlador;
 
+
 import com.retos.reto3.modelo.Category;
 import com.retos.reto3.servicios.ServicioCategoria;
 import java.util.List;
@@ -54,7 +55,7 @@ public class ControladorCategoria {
     }
     
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
+   // @ResponseStatus(HttpStatus.CREATED)
     public  boolean delete(@PathVariable("id") int bikeId ){        
        return service.deleteCategoria(bikeId);
     }

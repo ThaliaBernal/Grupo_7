@@ -60,7 +60,7 @@ public class ControladorClient {
     }
     
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
+   // @ResponseStatus(HttpStatus.CREATED)
     public  boolean delete(@PathVariable("id") int clientId ){        
        return service.deleteClient(clientId);
     }  

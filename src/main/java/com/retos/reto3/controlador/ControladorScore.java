@@ -58,7 +58,7 @@ public class ControladorScore {
     }
     
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
+  //  @ResponseStatus(HttpStatus.CREATED)
     public  boolean delete(@PathVariable("id") int scoreId ){        
        return service.deleteScore(scoreId);
     }

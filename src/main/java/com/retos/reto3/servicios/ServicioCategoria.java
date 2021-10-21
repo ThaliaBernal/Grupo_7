@@ -53,6 +53,9 @@ public class ServicioCategoria {
                if(categoria.getDescription() != null){
                    e.get().setDescription(categoria.getDescription());
                }
+               if(categoria.getFarms() != null){
+                   e.get().setFarms(categoria.getFarms());
+               }
                metodosCrud.save(e.get());
                return e.get();
            }else{
